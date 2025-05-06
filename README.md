@@ -1,7 +1,7 @@
 # jrs-world-count
 
 Mi primer plugin de WordPress
-Añade información sobre un post al inicio o al final del contenido:
+Añade análisis sobre un post al inicio o al final del contenido:
 - Recuento de palabras
 - Recuento de caracteres
 - Tiempo de lectura
