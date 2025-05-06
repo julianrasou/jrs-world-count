@@ -1,0 +1,86 @@
+# Copyright (C) 2025 Julian Ramos Souza
+# This file is distributed under the same license as the Word Count plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Word Count 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jrs-word-count\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-05-06T10:03:01+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: word-count\n"
+
+#. Plugin Name of the plugin
+#: jrs-word-count.php
+#: class-word-count-plugin.php:105
+#: class-word-count-plugin.php:200
+msgid "Word Count"
+msgstr ""
+
+#. Description of the plugin
+#: jrs-word-count.php
+msgid "Displays analitics about a post"
+msgstr ""
+
+#. Author of the plugin
+#: jrs-word-count.php
+msgid "Julian Ramos Souza"
+msgstr ""
+
+#: class-word-count-plugin.php:51
+#: class-word-count-plugin.php:101
+msgid "Post Statistics"
+msgstr ""
+
+#: class-word-count-plugin.php:58
+#: class-word-count-plugin.php:62
+msgid "This post has "
+msgstr ""
+
+#: class-word-count-plugin.php:58
+msgid " words. "
+msgstr ""
+
+#: class-word-count-plugin.php:62
+msgid " characters. "
+msgstr ""
+
+#: class-word-count-plugin.php:66
+msgid "This post will take about "
+msgstr ""
+
+#: class-word-count-plugin.php:66
+msgid " minute(s) to read. "
+msgstr ""
+
+#: class-word-count-plugin.php:85
+msgid "Display Location"
+msgstr ""
+
+#: class-word-count-plugin.php:95
+msgid "Headline Text"
+msgstr ""
+
+#: class-word-count-plugin.php:115
+msgid "Character Count"
+msgstr ""
+
+#: class-word-count-plugin.php:125
+msgid "Read Time"
+msgstr ""
+
+#: class-word-count-plugin.php:188
+msgid "Beginning of post"
+msgstr ""
+
+#: class-word-count-plugin.php:189
+msgid "End of post"
+msgstr ""
+
+#: class-word-count-plugin.php:200
+msgid "Word Count Settings"
+msgstr ""

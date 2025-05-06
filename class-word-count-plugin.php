@@ -13,6 +13,16 @@ class Word_Count_Plugin {
 		add_action( 'admin_menu', array( $this, 'admin_page' ) );
 		add_action( 'admin_init', array( $this, 'settings' ) );
 		add_filter( 'the_content', array( $this, 'if_wrap' ) );
+		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+	}
+
+	/**
+	 * Load plugin text domain.
+	 *
+	 * @return void
+	 */
+	public function load_textdomain() {
+		load_plugin_textdomain( 'word-count', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	/**
@@ -38,22 +48,22 @@ class Word_Count_Plugin {
 	 * @return string
 	 */
 	public function create_html( $content ) {
-		$html = '<h3>' . esc_html( get_option( 'wcp_headline', __( 'Post Statistics', 'word_count' ) ) ) . '</h3><p>';
+		$html = '<h3>' . esc_html( get_option( 'wcp_headline', __( 'Post Statistics', 'word-count' ) ) ) . '</h3><p>';
 
 		if ( get_option( 'wcp_wordcount', '1' ) || get_option( 'wcp_readtime', '1' ) ) {
 			$word_count = str_word_count( strip_tags( $content ) );
 		}
 
 		if ( get_option( 'wcp_wordcount', '1' ) ) {
-			$html .= __( 'This post has ', 'word_count' ) . $word_count . __( ' words. ', 'word_count' ) . '<br>';
+			$html .= __( 'This post has ', 'word-count' ) . $word_count . __( ' words. ', 'word-count' ) . '<br>';
 		}
 
 		if ( get_option( 'wcp_charactercount', '1' ) ) {
-			$html .= __( 'This post has ', 'word_count' ) . strlen( strip_tags( $content ) ) . __( ' characters. ', 'word_count' ) . '<br>';
+			$html .= __( 'This post has ', 'word-count' ) . strlen( strip_tags( $content ) ) . __( ' characters. ', 'word-count' ) . '<br>';
 		}
 
 		if ( get_option( 'wcp_readtime', '1' ) ) {
-			$html .= __( 'This post will take about ', 'word_count' ) . round( $word_count / 225 ) . __( ' minute(s) to read. ', 'word_count' ) . '<br>';
+			$html .= __( 'This post will take about ', 'word-count' ) . round( $word_count / 225 ) . __( ' minute(s) to read. ', 'word-count' ) . '<br>';
 		}
 
 		$html . '</p>';
@@ -88,7 +98,7 @@ class Word_Count_Plugin {
 			'wcp_headline',
 			array(
 				'sanitize_callback' => 'sanitize_text_field',
-				'default'           => __( 'Post Statistics', 'word_count' ),
+				'default'           => __( 'Post Statistics', 'word-count' ),
 			)
 		);
 
