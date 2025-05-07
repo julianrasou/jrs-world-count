@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Summary of Word_Count_Plugin
  */
@@ -51,7 +50,7 @@ class Word_Count_Plugin {
 		$html = '<h3>' . esc_html( get_option( 'wcp_headline', __( 'Post Statistics', 'word-count' ) ) ) . '</h3><p>';
 
 		if ( get_option( 'wcp_wordcount', '1' ) || get_option( 'wcp_readtime', '1' ) ) {
-			$word_count = str_word_count( strip_tags( $content ) );
+			$word_count = str_word_count( wp_strip_all_tags( $content ) );
 		}
 
 		if ( get_option( 'wcp_wordcount', '1' ) ) {
@@ -59,7 +58,7 @@ class Word_Count_Plugin {
 		}
 
 		if ( get_option( 'wcp_charactercount', '1' ) ) {
-			$html .= __( 'This post has ', 'word-count' ) . strlen( strip_tags( $content ) ) . __( ' characters. ', 'word-count' ) . '<br>';
+			$html .= __( 'This post has ', 'word-count' ) . strlen( wp_strip_all_tags( $content ) ) . __( ' characters. ', 'word-count' ) . '<br>';
 		}
 
 		if ( get_option( 'wcp_readtime', '1' ) ) {
@@ -68,7 +67,7 @@ class Word_Count_Plugin {
 
 		$html . '</p>';
 
-		if ( get_option( 'wcp_location', '0' ) == '0' ) {
+		if ( get_option( 'wcp_location', '0' ) === '0' ) {
 			return $html . $content;
 		}
 		return $content . $html;
